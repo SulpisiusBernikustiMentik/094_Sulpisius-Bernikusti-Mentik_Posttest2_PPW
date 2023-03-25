@@ -1,0 +1,54 @@
+/* Style untuk navbar */
+header {
+	background-color: #000000	;
+	color: #fff;
+	padding: 10px;
+}
+
+header h1 {
+	font-size: 2em;
+	margin: 0;
+	padding: 0.5em;
+	text-align: center;
+	background-color: #333;
+  }
+  
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav li:last-child {
+	margin-right: 0;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #f2f2f2;
+}
+
+/* Style untuk footer */
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+/* Style untuk halaman lainnya */
+main {
+	margin: 50px;
+}
+

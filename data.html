@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Beasiswa</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="konten.css">
+</head>
+<body>
+	<header>
+		<h1>Beasiswa</h1>
+		<nav>
+			<ul>
+				<li><a href="beranda.html">Beranda</a></li>
+				<li><a href="Daftar.html">Daftar</a></li>
+				<li><a href="layanan.html">Layanan</a></li>
+				<li><a href="Tentang.html">Tentang</a></li>
+                <li><a href="data.html">data</a></li>
+				<li><a href="index.html">logout</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<ul>
+				<li>Nama             : <span id="nama"></span></li>
+				<li>hobi           : <span id="hobi"></span></li>
+				<li>deskripsi        : <span id="d"></span></li>
+			
+				<li>Jenis Kelamin    : <span id="jk"></span></li>
+			
+			  </ul>
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Sulpisius. All rights reserved.</p>
+	</footer>
+</body>
+<script>
+
+const dataForm = sessionStorage.getItem('dataUserKey')
+const userForm = JSON.parse(dataForm)
+
+const form = document.getElementById('form')
+		const nama = document.getElementById('nama')
+		const st = document.getElementById('hobi')
+		const s = document.getElementById('d')
+
+	
+	
+		const jk = document.getElementById('jk')
+	
+		
+nama.innerHTML = " " + userForm[0]["nama"]
+st.innerHTML = " " + userForm[0]["hobi"]
+s.innerHTML = " " + userForm[0]["d"]
+jk.innerHTML = "   " + userForm[0]["female"]
+jk.innerHTML = "   " + userForm[0]["male"]
+let hobiValue = ""
+
+</script>
+</html>

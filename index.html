@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Halaman Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form id="form">
+        <label for="username">email</label>
+        <input type="text" id="email" name="username" placeholder="Masukkan email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+        <button type="submit">Login</button>
+        <br>
+        <br>
+        <p>Belum Punya Akun? :
+            <a href="Register.html">Daftar Sekarang</a>
+        </p>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("form");
+    const email = document.getElementById("email");
+    const pass = document.getElementById("password");
+       
+    form.addEventListener("submit", function(e){
+    e.preventDefault();
+    
+    const loc_email = localStorage.getItem("email");
+    const loc_pass = localStorage.getItem("password");
+    
+    if(email.value == loc_email && pass.value == loc_pass){
+        alert("berhasil login");
+        window.location.href = "beranda.html";
+    } else {
+        alert("gagal login");
+    }
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registrasi</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="form.css">
+</head>
+<body>
+	<header>
+		<h1>Beasiswa</h1>
+		<nav>
+			<ul>
+				
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<h1>Selamat datang di Menu Registrasi</h1>
+		<p>Pastikan anda Mengisi Data dengan sesuai dan diperiksa sebelum mengirimkan, Terimakasih</p>
+
+		<form id="form">
+			<label for="name">Nama:</label>
+			<input type="text" id="name" name="name" required>
+
+		
+			<label for="gender">Jenis Kelamin:</label>
+			<input type="radio" id="male" name="gender" value="male">
+			<label for="male">Laki-laki</label>
+			<input type="radio" id="female" name="gender" value="female">
+			<label for="female">Perempuan</label>
+
+			<label for="hobi">Hobi:</label>
+			<select id="hobi" name="hobi" required>
+				<option value="" selected disabled>-- Pilih Hobi --</option>
+				<option value="menulis">Menulis</option>
+				<option value="membaca">Membaca</option>
+				<option value="menggambar">Menggambar</option>
+			</select>
+
+			<label for="agree">Saya setuju dengan syarat dan ketentuan:</label>
+			<input type="checkbox" id="agree" name="agree" required>
+
+
+			<div class="button">
+				<input type="submit">
+			  </div>
+            <br>
+            <br>
+            <p>Sudah Punya Akun? :
+                <a href="index.html">Masuk Sekarang</a>
+            </p>
+		</form>
+
+		<script>
+			const form = document.getElementById('form')
+			const nama = document.getElementById('nama')
+			const st = document.getElementById('hobi')
+		
+		
+			const wanita = document.getElementById('male')
+			const pria = document.getElementById('female')
+			
+
+			const dataForm = []
+		  
+			form.addEventListener('submit', function(event){
+			  event.preventDefault()
+		  
+		  
+			  dataForm.push({
+				"nama": nama.value,
+			
+				"hobi": st.value,
+	
+				"male": wanita.value,
+				"female": pria.value,
+			
+			  })
+		  
+			  let dataUserString = JSON.stringify(dataForm);
+			  sessionStorage.setItem('dataUserKey', dataUserString);
+		  
+			  alert("pendaftaran berhasil")
+			  
+			  window.location.href = "data.html"
+			})
+		  
+			var inputs = document.querySelectorAll('.button_img')
+			for (var i = 0, len = inputs.length; i < len; i++) {
+			  customInput(inputs[i])
+			}
+		  </script>
+	
+	<footer>
+		<p>&copy; 2023 Sulpisius. All rights reserved.</p>
+	</footer>
+</body>
+</html>
